@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+:root {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-card: hsl(var(--card));
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 5s;
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes meteor {
+  0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+}
+
+
+@layer base{
+  :root{
+    --background: 210 40% 98%;
+    --foreground: 210 40% 10%;
+    --card: 0 0% 100%;
+    --primary: 250 47% 60%;
+    --primary-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 8%;
+    --primary: 250 65% 65%;
+    --primary-foreground: 231 31% 91%;
+    --border: 217 33% 20%;
+  }
+}
+
+
+
+
+.html{
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* For screens ≥ 640px */
+@media (width >= 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* For screens ≥ 768px */
+@media (width >= 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* For screens ≥ 1024px */
+@media (width >= 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* For screens ≥ 1280px */
+@media (width >= 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* For screens ≥ 1400px */
+@media (width >= 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+.text-glow {
+  text-shadow: 0 0 10px rbga(167,139,250,0.5);
+
+}
+
+.card-hover {
+  transition: transform 0.3s ease;
+}
+
+.gradient-border{
+  position: relative;
+  
+  background: liner gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+.cosmic_button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.cosmic_button:hover {
+  box-shadow: 0 0 10px hsl(var(--primary));
+}
+.star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  box-shadow: 0 0 5px hsl(var(--primary-foreground));
+}
+.meteor{
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, hsl(var(--primary)), transparent);
+  transform-origin: top center;
+  animation: meteor var(--animate-meteor);
+ }
+.animate-meteor{
+  animation: meteor linear infinite;
+
+}
+
+/* custom.css */
+
+.text-primary {
+  color: #3B82F6; /* Tailwind's blue-500 */
+}
+
+/* If you want a gradient text effect */
+.text-gradient {
+  background: linear-gradient(to right, #3B82F6, #9333EA);
+  
+  -webkit-text-fill-color: transparent;
+}
+#root{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+
+/* Fade-in keyframes */
+
+/* Animations with delays */
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fade-in 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease forwards;
+  animation-delay: 1s;
+}
+.cosmic-button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.cosmic-button:hover {
+  box-shadow: 0 0 10px hsl(var(--primary));
+}
+/* Fade In animation with opacity */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Normal fade in */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Fade in with 1s delay */
+.animate-fade-in-delay-1 {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1s forwards;
+}
+
+/* Fade in with 2s delay */
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 2s forwards;
+}
+
+/* Fade in with 3s delay */
+.animate-fade-in-delay-3 {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 3s forwards;
+}
+
+/* Fade in with 4s delay */
+.animate-fade-in-delay-4 {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 4s forwards;
+}
+.skill {
+  transition: all 0.3s ease;
+}
+.skill:hover {
+  color: #60a5fa; /* sky-400 */
+  text-shadow: 0 0 15px #60a5fa, 0 0 25px #60a5fa;
+  transform: scale(1.2);
+}
